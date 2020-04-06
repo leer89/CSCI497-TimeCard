@@ -182,6 +182,10 @@
     <Compile Include="Migrations\202004060345218_initial migratin.Designer.cs">
       <DependentUpon>202004060345218_initial migratin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004060351597_new grio.cs" />
+    <Compile Include="Migrations\202004060351597_new grio.Designer.cs">
+      <DependentUpon>202004060351597_new grio.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -270,6 +274,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202004060345218_initial migratin.resx">
       <DependentUpon>202004060345218_initial migratin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004060351597_new grio.resx">
+      <DependentUpon>202004060351597_new grio.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
