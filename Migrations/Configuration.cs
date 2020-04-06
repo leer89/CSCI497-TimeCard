@@ -1,4 +1,4 @@
-orked namespace TimeCard.Migrations
+namespace TimeCard.Migrations
 {
     using System;
     using System.Data.Entity;
