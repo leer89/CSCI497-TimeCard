@@ -4,14 +4,22 @@
 <h2>@ViewBag.Title.</h2>
 <h3>@ViewBag.Message</h3>
 
+<div class="col-md-4">
+    <h2>Getting started</h2>
+    <p>
+        TimeCard allows users to create and approve time cards. If you are new to the application, please register a new account using a valid email.
+    </p>
+    <p>@Html.ActionLink("Learn More >>", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-default" })</p>
+</div>
+<div class="col-md-4">
+    <h2>Employees</h2>
+    <p>As an employee, you will be able to keep track of time spent working each day. All it takes is simply logging in, selecting your timecard, and inputting your time.</p>
+    <p>@Html.ActionLink("Learn More >>", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-default" })</p>
+</div>
+<div class="col-md-4">
+    <h2>Manager</h2>
+    <p>As a manager, you will be able to approve time cards. Once they are approved, the time cards will become read-only.</p>
+    <p>@Html.ActionLink("Learn More >>", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-default" })</p>
+</div>
 
-
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <h2>Roles:</h2>
-            <p>
-                Employees can submit timecards. Managers will be able to approve timecards.
-            </p>
-        </div>
-    </div>
 
