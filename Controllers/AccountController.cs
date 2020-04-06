@@ -20,30 +20,31 @@ namespace TimeCard.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-        private ApplicationRoleManager _roleManager;
+        //private ApplicationRoleManager _roleManager;
 
         public AccountController()
         {
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager)
+        //public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager, ApplicationRoleManager roleManager)
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
         {
             UserManager = userManager;
             SignInManager = signInManager;
-            RoleManager = roleManager;
+            //RoleManager = roleManager;
         }
 
-        public ApplicationRoleManager RoleManager
-        {
-            get
-            {
-                return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
-            }
-            private set
-            {
-                _roleManager = value;
-            }
-        }
+        //public ApplicationRoleManager RoleManager
+        //{
+        //    get
+        //    {
+        //        return _roleManager ?? HttpContext.GetOwinContext().Get<ApplicationRoleManager>();
+        //    }
+        //    private set
+        //    {
+        //        _roleManager = value;
+        //    }
+        //}
 
         public ApplicationSignInManager SignInManager
         {
@@ -156,10 +157,10 @@ namespace TimeCard.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            List<SelectListItem> list = new List<SelectListItem>();
-            foreach (var role in RoleManager.Roles)
-                list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
-            ViewBag.Roles = list;
+            //List<SelectListItem> list = new List<SelectListItem>();
+            //foreach (var role in RoleManager.Roles)
+            //    list.Add(new SelectListItem() { Value = role.Name, Text = role.Name });
+            //ViewBag.Roles = list;
             return View();
         }
 
@@ -506,18 +507,18 @@ namespace TimeCard.Controllers
         #endregion
     }
 
-    public class ApplicationRoleManager : RoleManager<IdentityRole>
-    {
-        public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
-        : base(roleStore) { }
+    //public class ApplicationRoleManager : RoleManager<IdentityRole>
+    //{
+    //    public ApplicationRoleManager(IRoleStore<IdentityRole, string> roleStore)
+    //    : base(roleStore) { }
 
-        public static ApplicationRoleManager Create(
-            IdentityFactoryOptions<ApplicationRoleManager> options,
-            IOwinContext context)
-        {
-            var manager = new ApplicationRoleManager(
-                new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
-            return manager;
-        }
-    }
+    //    public static ApplicationRoleManager Create(
+    //        IdentityFactoryOptions<ApplicationRoleManager> options,
+    //        IOwinContext context)
+    //    {
+    //        var manager = new ApplicationRoleManager(
+    //            new RoleStore<IdentityRole>(context.Get<ApplicationDbContext>()));
+    //        return manager;
+    //    }
+    //}
 }

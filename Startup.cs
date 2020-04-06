@@ -9,7 +9,7 @@ namespace TimeCard
     {
         public void Configuration(IAppBuilder app)
         {
-            app.CreatePerOwinContext<ApplicationRoleManager>(Application‌​RoleManager.Create);
+            //app.CreatePerOwinContext<ApplicationRoleManager>(Application‌​RoleManager.Create);
 
             ConfigureAuth(app);
         }
